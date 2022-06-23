@@ -1,6 +1,5 @@
 package com.mystore.pageobjects;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -43,4 +42,9 @@ public class IndexPage extends BaseClass {
 		return myStoreTitle;
 	}
 
+	public SearchResultPage searchProduct(String productName) {
+		Action.type(searchProductBox, productName);
+		Action.click(driver, searchButton);
+		return new SearchResultPage();
+		}
 }
