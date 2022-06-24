@@ -41,6 +41,14 @@ public class LoginPage extends BaseClass {
 		Action.click(driver, SignInButton);
 		return new HomePage();
 	}
+	
+	public AddressPage login1(String userName, String password) {
+		Action.type(emailAddressField, userName);
+		Action.type(passwordField, password);
+		Action.click(driver, SignInButton);
+		return new AddressPage();
+	}
+	
 
 	public AccountCreationPage creatNewAccount(String email) {
 		Action.type(emailNewAccountField, email);
