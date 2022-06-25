@@ -13,13 +13,13 @@ public class AddtoCartPage extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//input[@id='quantity_wanted']")
+	@FindBy(id="quantity_wanted")
 	WebElement quantity;
 
-	@FindBy(xpath = "//select[@id='group_1']")
+	@FindBy(name="group_1")
 	WebElement size;
 
-	@FindBy(xpath = "//span[normalize-space()='Add to cart']")
+	@FindBy(xpath="//span[text()='Add to cart']")
 	WebElement addToCarteBtn;
 
 	@FindBy(xpath = "// h2[normalize-space()='Product successfully added to your shopping cart']")
