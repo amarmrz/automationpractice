@@ -16,7 +16,7 @@ public class IndexPage extends BaseClass {
 	@FindBy(xpath = "//a[@title='Log in to your customer account']")
 	WebElement signInBtn;
 
-	@FindBy(xpath = "//img[@alt='My Store']")
+	@FindBy(xpath = "//img[@class='logo img-responsive']")
 	WebElement myStoreLogo;
 
 	@FindBy(xpath = "//input[@id='search_query_top']")
@@ -37,7 +37,7 @@ public class IndexPage extends BaseClass {
 
 	}
 
-	public String name() {
+	public String storeTitle() {
 		String myStoreTitle = driver.getTitle();
 		return myStoreTitle;
 	}

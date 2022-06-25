@@ -36,4 +36,10 @@ public class HomePage extends BaseClass {
 
 	}
 
+	public String validateHomePage() {
+		String urlHomePage = driver.getCurrentUrl();
+		return urlHomePage;
+
+	}
+
 }

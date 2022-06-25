@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.mystore.testcases;
 
 import org.testng.Assert;
@@ -9,14 +6,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.mystore.base.BaseClass;
+import com.mystore.pageobjects.AccountCreationPage;
 import com.mystore.pageobjects.IndexPage;
+import com.mystore.pageobjects.LoginPage;
 
-/**
- * @author Amar
- *
- */
-public class IndexPageTest extends BaseClass {
+public class AccountCreationPageTest extends BaseClass {
 	public IndexPage indexPage;
+	public LoginPage loginPage;
+	public AccountCreationPage accountcreationPage;
 
 	@BeforeMethod
 	public void setup() throws InterruptedException {
@@ -31,17 +28,13 @@ public class IndexPageTest extends BaseClass {
 	}
 
 	@Test
-	public void verifyLogo() throws InterruptedException {
+	public void verifyAccountCreationPageTest() {
 		indexPage = new IndexPage();
-		boolean result = indexPage.validateLogo();
+		loginPage = indexPage.clickOnSignIn();
+		accountcreationPage = loginPage.creatNewAccount("aliali@gmail.com");
+		boolean result = accountcreationPage.validateAccountCreatePage();
 		Assert.assertTrue(result);
-	}
 
-	@Test
-	public void getMyStoreTitle() throws InterruptedException {
-		indexPage = new IndexPage();
-		String Title = indexPage.storeTitle();
-		Assert.assertEquals(Title, "My Store");
 	}
 
 }

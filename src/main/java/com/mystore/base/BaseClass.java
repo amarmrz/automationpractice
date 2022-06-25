@@ -31,8 +31,10 @@ public class BaseClass {
 		try {
 
 			FileInputStream ip = new FileInputStream(
-					System.getProperty("user.dir") + "\\Configuration\\config.properties");
+					System.getProperty("user.dir") + "\\Configuration\\Config.properties");
+			prop = new Properties();
 			prop.load(ip);
+			// System.out.print("this the input stream" + ip);
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -49,8 +51,10 @@ public class BaseClass {
 		} else if (browserName.contains("Firefox")) {
 			driver = new FirefoxDriver();
 		}
-		Action.implicitWait(driver,10);
-		Action.pageLoadTimeOut(driver,30);
+
+		// Action.pageLoadTimeOut(driver, 30);
 		driver.get(prop.getProperty("url"));
+		Action.implicitWait(driver, 10);
+		driver.manage().window().maximize();
 	}
 }
