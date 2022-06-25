@@ -10,7 +10,7 @@ import com.mystore.base.BaseClass;
 public class ShippingPage extends BaseClass {
 
 	public ShippingPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "//input[@id='cgv']")
@@ -20,11 +20,11 @@ public class ShippingPage extends BaseClass {
 	WebElement proceedToCheckOutBtn;
 
 	public void ClickOnCheckTerms() {
-		Action.click(driver, checkTermsBtn);
+		Action.click(getDriver(), checkTermsBtn);
 	}
 
 	public PaymentPage clickOnProceedToCheckOut() {
-		Action.click(driver, proceedToCheckOutBtn);
+		Action.click(getDriver(), proceedToCheckOutBtn);
 		return new PaymentPage();
 	}
 }

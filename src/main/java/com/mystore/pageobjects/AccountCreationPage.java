@@ -17,14 +17,14 @@ import com.mystore.base.BaseClass;
 public class AccountCreationPage extends BaseClass {
 
 	public AccountCreationPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "//h1[@class='page-heading']")
 	WebElement formTitle;
 
 	public boolean validateAccountCreatePage() {
-		return Action.isDisplayed(driver, formTitle);
+		return Action.isDisplayed(getDriver(), formTitle);
 
 	}
 

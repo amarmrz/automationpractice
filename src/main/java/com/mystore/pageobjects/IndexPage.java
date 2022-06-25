@@ -10,7 +10,7 @@ import com.mystore.base.BaseClass;
 public class IndexPage extends BaseClass {
 
 	public IndexPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "//a[@title='Log in to your customer account']")
@@ -28,23 +28,23 @@ public class IndexPage extends BaseClass {
 	/////////////////////////////////////
 
 	public LoginPage clickOnSignIn() {
-		Action.click(driver, signInBtn);
+		Action.click(getDriver(), signInBtn);
 		return new LoginPage();
 	}
 
 	public boolean validateLogo() {
-		return Action.isDisplayed(driver, myStoreLogo);
+		return Action.isDisplayed(getDriver(), myStoreLogo);
 
 	}
 
 	public String storeTitle() {
-		String myStoreTitle = driver.getTitle();
+		String myStoreTitle = getDriver().getTitle();
 		return myStoreTitle;
 	}
 
 	public SearchResultPage searchProduct(String productName) {
 		Action.type(searchProductBox, productName);
-		Action.click(driver, searchButton);
+		Action.click(getDriver(), searchButton);
 		return new SearchResultPage();
-		}
+	}
 }

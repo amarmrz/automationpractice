@@ -17,14 +17,14 @@ import com.mystore.base.BaseClass;
 public class OrderSummary extends BaseClass{
 
 	public OrderSummary() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "//span[normalize-space()='I confirm my order']")
 	WebElement confirmMyOrderBtn;
 	
 	public OrderConfirmationPage clickOnConfirmMyOrder() {
-		Action.click(driver, confirmMyOrderBtn);
+		Action.click(getDriver(), confirmMyOrderBtn);
 		return new OrderConfirmationPage();
 	}
 	

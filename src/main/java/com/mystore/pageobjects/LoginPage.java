@@ -17,7 +17,7 @@ import com.mystore.base.BaseClass;
 public class LoginPage extends BaseClass {
 
 	public LoginPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "//input[@id='email']")
@@ -38,21 +38,21 @@ public class LoginPage extends BaseClass {
 	public HomePage login(String userName, String password) {
 		Action.type(emailAddressField, userName);
 		Action.type(passwordField, password);
-		Action.click(driver, SignInButton);
+		Action.click(getDriver(), SignInButton);
 		return new HomePage();
 	}
 	
 	public AddressPage login1(String userName, String password) {
 		Action.type(emailAddressField, userName);
 		Action.type(passwordField, password);
-		Action.click(driver, SignInButton);
+		Action.click(getDriver(), SignInButton);
 		return new AddressPage();
 	}
 	
 
 	public AccountCreationPage creatNewAccount(String email) {
 		Action.type(emailNewAccountField, email);
-		Action.click(driver, emailNewAccountButton);
+		Action.click(getDriver(), emailNewAccountButton);
 		return new AccountCreationPage();
 	}
 }

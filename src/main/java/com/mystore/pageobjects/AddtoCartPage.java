@@ -10,7 +10,7 @@ import com.mystore.base.BaseClass;
 public class AddtoCartPage extends BaseClass {
 
 	public AddtoCartPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(id="quantity_wanted")
@@ -39,15 +39,15 @@ public class AddtoCartPage extends BaseClass {
 	}
 
 	public void clickOnAddToCarte() {
-		Action.click(driver, addToCarteBtn);
+		Action.click(getDriver(), addToCarteBtn);
 	}
 
 	public boolean validateAddtoCarte() {
-		return Action.isDisplayed(driver, addToCarteMessage);
+		return Action.isDisplayed(getDriver(), addToCarteMessage);
 	}
 
 	public OrderPage clickOnCheckOut() {
-		Action.JSClick(driver, proceedToCheckOutBtn);
+		Action.JSClick(getDriver(), proceedToCheckOutBtn);
 		return new OrderPage();
 	}
 }

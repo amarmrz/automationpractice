@@ -23,7 +23,7 @@ public class AccountCreationPageTest extends BaseClass {
 
 	@AfterMethod
 	public void teardown() throws InterruptedException {
-		driver.quit();
+		getDriver().quit();
 
 	}
 

@@ -9,7 +9,7 @@ import com.mystore.base.BaseClass;
 public class OrderConfirmationPage extends BaseClass {
 
 	public OrderConfirmationPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "//strong[normalize-space()='Your order on My Store is complete.']")
@@ -19,5 +19,4 @@ public class OrderConfirmationPage extends BaseClass {
 		String ConfirmMessage=confirmMessage.getText();
 		return ConfirmMessage;
 	}
-
 }

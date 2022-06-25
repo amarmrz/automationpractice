@@ -17,7 +17,7 @@ import com.mystore.base.BaseClass;
 public class OrderPage extends BaseClass {
 
 	public OrderPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "//td[@class='cart_unit']/span/span")
@@ -44,7 +44,7 @@ public class OrderPage extends BaseClass {
 	}
 
 	public LoginPage clickOnCheckOut() {
-		Action.click(driver, proceedToCheckout);
+		Action.click(getDriver(), proceedToCheckout);
 		return new LoginPage();
 	}
 

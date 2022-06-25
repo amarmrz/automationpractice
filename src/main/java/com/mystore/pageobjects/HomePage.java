@@ -17,7 +17,7 @@ import com.mystore.base.BaseClass;
 public class HomePage extends BaseClass {
 
 	public HomePage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "//span[normalize-space()='My wishlists']")
@@ -27,17 +27,17 @@ public class HomePage extends BaseClass {
 	WebElement orderHistory;
 
 	public boolean validateMywishList() {
-		return Action.isDisplayed(driver, wishList);
+		return Action.isDisplayed(getDriver(), wishList);
 
 	}
 
 	public boolean validateOrderHistory() {
-		return Action.isDisplayed(driver, orderHistory);
+		return Action.isDisplayed(getDriver(), orderHistory);
 
 	}
 
 	public String validateHomePage() {
-		String urlHomePage = driver.getCurrentUrl();
+		String urlHomePage = getDriver().getCurrentUrl();
 		return urlHomePage;
 
 	}

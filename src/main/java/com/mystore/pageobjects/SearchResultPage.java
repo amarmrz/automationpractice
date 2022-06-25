@@ -10,19 +10,19 @@ import com.mystore.base.BaseClass;
 public class SearchResultPage extends BaseClass {
 
 	public SearchResultPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "// img[@title='Faded Short Sleeve T-shirts']")
 	WebElement productResult;
 
 	public boolean isProductAvailable() {
-		return Action.isDisplayed(driver, productResult);
+		return Action.isDisplayed(getDriver(), productResult);
 
 	}
 
 	public AddtoCartPage clickOnProduct() {
-		Action.click(driver, productResult);
+		Action.click(getDriver(), productResult);
 		return new AddtoCartPage();
 	}
 

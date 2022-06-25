@@ -17,14 +17,14 @@ import com.mystore.base.BaseClass;
 public class AddressPage extends BaseClass {
 
 	public AddressPage() {
-		PageFactory.initElements(driver, this);
+		PageFactory.initElements(getDriver(), this);
 	}
 
 	@FindBy(xpath = "//button[@name='processAddress']//span[contains(text(),'Proceed to checkout')]")
 	WebElement proceedToCheckOutBtn;
 
 	public ShippingPage clickOnCheckOut() {
-		Action.click(driver, proceedToCheckOutBtn);
+		Action.click(getDriver(), proceedToCheckOutBtn);
 		return new ShippingPage();
 	}
 	
