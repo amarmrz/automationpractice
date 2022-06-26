@@ -6,6 +6,7 @@ package com.mystore.testcases;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.mystore.base.BaseClass;
@@ -24,19 +25,20 @@ public class LoginPageTest extends BaseClass {
 	public LoginPage loginPage;
 	public HomePage homepage;
 
-	@BeforeMethod
-	public void setup() throws InterruptedException {
-		launchApp();
+	@Parameters("browser")
+	@BeforeMethod(groups = { "Smoke", "Sanity", "Regression" })
+	public void setup(String browser) throws InterruptedException {
+		launchApp(browser);
 
 	}
 
-	@AfterMethod
+	@AfterMethod(groups = { "Smoke", "Sanity", "Regression" })
 	public void teardown() throws InterruptedException {
 		getDriver().quit();
 
 	}
 
-	@Test(dataProvider = "credentials", dataProviderClass = DataProviders.class)
+	@Test(dataProvider = "credentials", dataProviderClass = DataProviders.class, groups = { "Sanity", "Smoke" })
 	public void validateLogin(String userName, String password) throws InterruptedException {
 		Log.startTestCase("LoginTest");
 		indexPage = new IndexPage();

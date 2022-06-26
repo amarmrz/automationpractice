@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.mystore.testcases.LoginPageTest">
+      <class name="com.mystore.testcases.AccountCreationPageTest">
         <methods>
-          <include name="validateLogin" invocation-numbers="1"/>
+          <include name="verifyAccountCreationPageTest" invocation-numbers="0"/>
           <include name="setup"/>
-          <include name="teardown"/>
           <include name="BeforeSuit"/>
           <include name="loadConfig"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- com.mystore.testcases.LoginPageTest -->
+      </class> <!-- com.mystore.testcases.AccountCreationPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

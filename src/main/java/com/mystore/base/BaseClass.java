@@ -16,7 +16,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
+import com.beust.jcommander.Parameter;
 import com.mystore.actiondriver.Action;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -30,7 +32,7 @@ public class BaseClass {
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 	public static Properties prop = null;
 
-	@BeforeTest
+	@BeforeTest(groups = { "Smoke", "Sanity", "Regression" })
 	public void loadConfig() {
 
 		try {
@@ -48,7 +50,7 @@ public class BaseClass {
 		}
 	}
 
-	@BeforeSuite
+	@BeforeSuite(groups = { "Smoke", "Sanity", "Regression" })
 	public void BeforeSuit() {
 		DOMConfigurator.configure("log4j.xml");
 	}
@@ -58,9 +60,10 @@ public class BaseClass {
 		return driver.get();
 	}
 
-	public static void launchApp() throws InterruptedException {
+	
+	public static void launchApp(String browserName) throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
-		String browserName = prop.getProperty("browser");
+		// String browserName = prop.getProperty("browser");
 		if (browserName.contains("Chrome")) {
 			driver.set(new ChromeDriver());
 		} else if (browserName.contains("Firefox")) {
