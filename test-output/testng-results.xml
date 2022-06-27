@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="21" total="24" passed="3" failed="0" skipped="0">
+<testng-results ignored="14" total="18" passed="2" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-06-26T13:27:40 PDT" name="Suite" finished-at="2022-06-26T13:30:06 PDT" duration-ms="146046">
+  <suite started-at="2022-06-27T16:43:09 PDT" name="Suite" finished-at="2022-06-27T16:46:19 PDT" duration-ms="190663">
     <groups>
       <group name="Sanity">
-        <method signature="AddtoCartPageTest.AddtoCartTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@29647f75]" name="AddtoCartTest" class="com.mystore.testcases.AddtoCartPageTest"/>
+        <method signature="AccountCreationPageTest.verifyAccountCreationPageTest(java.lang.String)[pri:0, instance:com.mystore.testcases.AccountCreationPageTest@2abf4075]" name="verifyAccountCreationPageTest" class="com.mystore.testcases.AccountCreationPageTest"/>
+        <method signature="AddtoCartPageTest.AddtoCartTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@770d3326]" name="AddtoCartTest" class="com.mystore.testcases.AddtoCartPageTest"/>
+        <method signature="LoginPageTest.validateLogin(java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.LoginPageTest@6a370f4]" name="validateLogin" class="com.mystore.testcases.LoginPageTest"/>
       </group> <!-- Sanity -->
       <group name="Regression">
-        <method signature="AddtoCartPageTest.AddtoCartTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@29647f75]" name="AddtoCartTest" class="com.mystore.testcases.AddtoCartPageTest"/>
-        <method signature="EndtoEndTest.endtoEndTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.EndtoEndTest@3315d2d7]" name="endtoEndTest" class="com.mystore.testcases.EndtoEndTest"/>
-        <method signature="OrderPageTest.verifyTotlaPrice(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.OrderPageTest@d6e7bab]" name="verifyTotlaPrice" class="com.mystore.testcases.OrderPageTest"/>
+        <method signature="AddtoCartPageTest.AddtoCartTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@770d3326]" name="AddtoCartTest" class="com.mystore.testcases.AddtoCartPageTest"/>
       </group> <!-- Regression -->
+      <group name="Smoke">
+        <method signature="LoginPageTest.validateLogin(java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.LoginPageTest@6a370f4]" name="validateLogin" class="com.mystore.testcases.LoginPageTest"/>
+      </group> <!-- Smoke -->
     </groups>
-    <test started-at="2022-06-26T13:27:40 PDT" name="Regression" finished-at="2022-06-26T13:30:06 PDT" duration-ms="146046">
+    <test started-at="2022-06-27T16:43:09 PDT" name="Sanity" finished-at="2022-06-27T16:46:19 PDT" duration-ms="190663">
       <class name="com.mystore.testcases.AddtoCartPageTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@29647f75]" started-at="2022-06-26T13:27:41 PDT" name="setup" finished-at="2022-06-26T13:27:57 PDT" duration-ms="16333" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@770d3326]" started-at="2022-06-27T16:44:50 PDT" name="setup" finished-at="2022-06-27T16:45:14 PDT" duration-ms="23652" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -26,7 +29,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="AddtoCartTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@29647f75]" started-at="2022-06-26T13:27:57 PDT" name="AddtoCartTest" data-provider="getProduct" finished-at="2022-06-26T13:28:17 PDT" duration-ms="19219" status="PASS">
+        <test-method signature="AddtoCartTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@770d3326]" started-at="2022-06-27T16:45:14 PDT" name="AddtoCartTest" data-provider="getProduct" finished-at="2022-06-27T16:45:46 PDT" duration-ms="32674" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -44,16 +47,58 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.failNotEquals(Assert.java:969)
+at org.testng.Assert.assertTrue(Assert.java:43)
+at org.testng.Assert.assertTrue(Assert.java:53)
+at com.mystore.testcases.AddtoCartPageTest.AddtoCartTest(AddtoCartPageTest.java:51)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AddtoCartTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@29647f75]" started-at="2022-06-26T13:28:17 PDT" name="teardown" finished-at="2022-06-26T13:28:17 PDT" duration-ms="959" status="PASS">
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.mystore.testcases.AddtoCartPageTest@770d3326]" started-at="2022-06-27T16:45:47 PDT" name="teardown" finished-at="2022-06-27T16:45:48 PDT" duration-ms="963" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
       </class> <!-- com.mystore.testcases.AddtoCartPageTest -->
-      <class name="com.mystore.testcases.EndtoEndTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.EndtoEndTest@3315d2d7]" started-at="2022-06-26T13:28:18 PDT" name="setup" finished-at="2022-06-26T13:28:32 PDT" duration-ms="14280" status="PASS">
+      <class name="com.mystore.testcases.AccountCreationPageTest">
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.AccountCreationPageTest@2abf4075]" started-at="2022-06-27T16:45:48 PDT" name="setup" finished-at="2022-06-27T16:46:10 PDT" duration-ms="21824" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -64,80 +109,133 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="endtoEndTest(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.EndtoEndTest@3315d2d7]" started-at="2022-06-26T13:28:32 PDT" name="endtoEndTest" data-provider="getProduct" finished-at="2022-06-26T13:29:31 PDT" duration-ms="58633" status="PASS">
+        <test-method signature="verifyAccountCreationPageTest(java.lang.String)[pri:0, instance:com.mystore.testcases.AccountCreationPageTest@2abf4075]" started-at="2022-06-27T16:46:10 PDT" name="verifyAccountCreationPageTest" data-provider="email" finished-at="2022-06-27T16:46:18 PDT" duration-ms="8959" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[t-shirt]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[M]]>
+                <![CDATA[fdqff@gmail.com]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- endtoEndTest -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.mystore.testcases.EndtoEndTest@3315d2d7]" started-at="2022-06-26T13:29:31 PDT" name="teardown" finished-at="2022-06-26T13:29:32 PDT" duration-ms="919" status="PASS">
+        </test-method> <!-- verifyAccountCreationPageTest -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.mystore.testcases.AccountCreationPageTest@2abf4075]" started-at="2022-06-27T16:46:18 PDT" name="teardown" finished-at="2022-06-27T16:46:19 PDT" duration-ms="806" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->
-      </class> <!-- com.mystore.testcases.EndtoEndTest -->
-      <class name="com.mystore.testcases.OrderPageTest">
-        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.OrderPageTest@d6e7bab]" started-at="2022-06-26T13:29:32 PDT" name="setup" finished-at="2022-06-26T13:29:45 PDT" duration-ms="13392" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Chrome]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyTotlaPrice(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.OrderPageTest@d6e7bab]" started-at="2022-06-26T13:29:45 PDT" name="verifyTotlaPrice" data-provider="getProduct" finished-at="2022-06-26T13:30:04 PDT" duration-ms="19312" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[t-shirt]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2.0]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[M]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyTotlaPrice -->
-        <test-method is-config="true" signature="teardown()[pri:0, instance:com.mystore.testcases.OrderPageTest@d6e7bab]" started-at="2022-06-26T13:30:04 PDT" name="teardown" finished-at="2022-06-26T13:30:06 PDT" duration-ms="1268" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- teardown -->
-      </class> <!-- com.mystore.testcases.OrderPageTest -->
+      </class> <!-- com.mystore.testcases.AccountCreationPageTest -->
       <class name="com.mystore.testcases.LoginPageTest">
-        <test-method is-config="true" signature="BeforeSuit()[pri:0, instance:com.mystore.testcases.LoginPageTest@355ce81c]" started-at="2022-06-26T13:27:39 PDT" name="BeforeSuit" finished-at="2022-06-26T13:27:40 PDT" duration-ms="316" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- BeforeSuit -->
-        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.mystore.testcases.LoginPageTest@355ce81c]" started-at="2022-06-26T13:27:40 PDT" name="loadConfig" finished-at="2022-06-26T13:27:40 PDT" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="loadConfig()[pri:0, instance:com.mystore.testcases.LoginPageTest@6a370f4]" started-at="2022-06-27T16:43:08 PDT" name="loadConfig" finished-at="2022-06-27T16:43:09 PDT" duration-ms="638" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadConfig -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.LoginPageTest@6a370f4]" started-at="2022-06-27T16:43:10 PDT" name="setup" finished-at="2022-06-27T16:43:43 PDT" duration-ms="32746" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateLogin(java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.LoginPageTest@6a370f4]" started-at="2022-06-27T16:43:43 PDT" name="validateLogin" data-provider="credentials" finished-at="2022-06-27T16:44:03 PDT" duration-ms="20430" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[admin@xyz.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[admin@123]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLogin -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.mystore.testcases.LoginPageTest@6a370f4]" started-at="2022-06-27T16:44:03 PDT" name="teardown" finished-at="2022-06-27T16:44:05 PDT" duration-ms="1219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setup(java.lang.String)[pri:0, instance:com.mystore.testcases.LoginPageTest@6a370f4]" started-at="2022-06-27T16:44:05 PDT" name="setup" finished-at="2022-06-27T16:44:34 PDT" duration-ms="29238" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="validateLogin(java.lang.String, java.lang.String)[pri:0, instance:com.mystore.testcases.LoginPageTest@6a370f4]" started-at="2022-06-27T16:44:34 PDT" name="validateLogin" data-provider="credentials" finished-at="2022-06-27T16:44:48 PDT" duration-ms="14083" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ghjg@gmail.com]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[123456.0]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [http://automationpractice.com/index.php?controller=my-account] but found [http://automationpractice.com/index.php?controller=authentication]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [http://automationpractice.com/index.php?controller=my-account] but found [http://automationpractice.com/index.php?controller=authentication]
+at org.testng.Assert.fail(Assert.java:97)
+at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+at org.testng.Assert.assertEquals(Assert.java:118)
+at org.testng.Assert.assertEquals(Assert.java:575)
+at org.testng.Assert.assertEquals(Assert.java:585)
+at com.mystore.testcases.LoginPageTest.validateLogin(LoginPageTest.java:54)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+at org.testng.TestRunner.privateRun(TestRunner.java:766)
+at org.testng.TestRunner.run(TestRunner.java:587)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+at org.testng.TestNG.runSuites(TestNG.java:1039)
+at org.testng.TestNG.run(TestNG.java:1007)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateLogin -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.mystore.testcases.LoginPageTest@6a370f4]" started-at="2022-06-27T16:44:48 PDT" name="teardown" finished-at="2022-06-27T16:44:50 PDT" duration-ms="1316" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
       </class> <!-- com.mystore.testcases.LoginPageTest -->
-    </test> <!-- Regression -->
+    </test> <!-- Sanity -->
   </suite> <!-- Suite -->
 </testng-results>

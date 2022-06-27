@@ -14,12 +14,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 import com.beust.jcommander.Parameter;
 import com.mystore.actiondriver.Action;
+import com.mystore.utility.ExtentManager;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -32,9 +34,10 @@ public class BaseClass {
 	public static ThreadLocal<RemoteWebDriver> driver = new ThreadLocal<>();
 	public static Properties prop = null;
 
-	@BeforeTest(groups = { "Smoke", "Sanity", "Regression" })
+	@BeforeSuite(groups = { "Smoke", "Sanity", "Regression" })
 	public void loadConfig() {
-
+		ExtentManager.setExtent();
+		DOMConfigurator.configure("log4j.xml");
 		try {
 
 			FileInputStream ip = new FileInputStream(
@@ -50,17 +53,11 @@ public class BaseClass {
 		}
 	}
 
-	@BeforeSuite(groups = { "Smoke", "Sanity", "Regression" })
-	public void BeforeSuit() {
-		DOMConfigurator.configure("log4j.xml");
-	}
-
 	public static WebDriver getDriver() {
 		// Get Driver from threadLocalmap
 		return driver.get();
 	}
 
-	
 	public static void launchApp(String browserName) throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		// String browserName = prop.getProperty("browser");
@@ -75,4 +72,10 @@ public class BaseClass {
 //		getDriver().manage().timeouts().implicitlyWait(Integer.parseInt(prop.getProperty("implicitWait")),TimeUnit.SECONDS);
 		getDriver().manage().window().maximize();
 	}
+
+	@AfterSuite
+	public void AfterSuit() {
+		ExtentManager.endReport();
+	}
+
 }

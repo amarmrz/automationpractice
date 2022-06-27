@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import com.mystore.base.BaseClass;
 import com.mystore.pageobjects.IndexPage;
+import com.mystore.utility.Log;
 
 /**
  * @author Amar
@@ -34,9 +35,13 @@ public class IndexPageTest extends BaseClass {
 
 	@Test(groups = "Smoke")
 	public void verifyLogo() throws InterruptedException {
+		Log.startTestCase("LoginTest");
 		indexPage = new IndexPage();
+		Log.info("User is Going To Validate Logo");
 		boolean result = indexPage.validateLogo();
 		Assert.assertTrue(result);
+		Log.info("Logo Is Displayed");
+		Log.endTestCase("LoginTest");
 	}
 
 	@Test(groups = "Smoke")
